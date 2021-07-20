@@ -1,0 +1,118 @@
+@import './variable';
+@import './Mixin.scss';
+@import './Card.scss';
+
+.Filter-list {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 400px;
+    background-color: $toolbarColor;
+    z-index: 2;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+    display: flex;
+    flex-direction: column;
+    .Filter-content {
+        position: relative;
+        flex: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .Cancel {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 24px 16px;
+            cursor: pointer;
+        }
+        .Filter-ctn {
+            width: inherit;
+            padding: 24px 16px;
+            // margin: 0 auto;
+            // box-sizing: border-box;
+        }
+        .Head {
+            @include content-style(18px, #000000, 700);
+        }
+        .Item {
+            margin: 20px 0;
+        }
+        .Sub-head {
+            @include content-style(16px, $fontColor, 500);
+        }
+        .Choices {
+            display: flex;
+            margin-top: 8px;
+            span {
+                display: inline-block;
+                padding: 12px 0;
+                width: 50px;
+                text-align: center;
+                flex: auto;
+                border: 1px solid rgba(0,0,0,.12);
+                &:first-child {
+                    border-top-left-radius: $borderRadius;
+                    border-bottom-left-radius: $borderRadius;
+                }
+                &:last-child {
+                    border-top-right-radius: $borderRadius;
+                    border-bottom-right-radius: $borderRadius;
+                }
+                &.Active, &:hover {
+                    border-color: $colorSecondary;
+                    color: $colorSecondary;
+                    background-color: rgba($colorSecondary, 0.1);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .Filter-footer {
+        flex: none;
+        padding: 24px 0;
+        box-shadow: 0 2px 4px 4px rgb(0 0 0 / 5%);
+        .Footer-wrap {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 16px;
+            .Btn-clr {
+                @include btnOutline(40px, 120px);
+            }
+            .Btn-aply {
+                @include btnSolid(40px, 120px);
+            }
+        }
+    }     
+}
+
+.Filter-content::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #fafafa;
+}
+
+.Filter-content::-webkit-scrollbar {
+	width: 8px;
+	background-color: #fafafa;
+}
+
+.Filter-content::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #d8d8d8;
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1255px) {
+
+}
+
+@media only screen and (min-width: 360px) and (max-width: 991px) {
+    .Filter-list {
+        width: 100%;
+        .Filter-content .Filter-ctn, .Filter-footer .Footer-wrap {            
+            width: 360px;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+    }
+}

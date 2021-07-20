@@ -1,0 +1,147 @@
+@import "styles/variable";
+
+.Wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $backgroundColor;
+  overflow: hidden;
+  .Main-section {
+    display: flex;
+    flex-direction: row;
+    width: $initialWidth;
+    margin: 16px auto;
+    height: calc(100% - 156px);
+    .Left {
+      flex: none;
+      width: 410px;
+      margin-right: 8px;
+      overflow-y: overlay;
+      overflow-x: hidden;
+    }
+    .Right {
+      flex: auto;
+      margin-left: 24px;
+      position: relative;
+      border-radius: $borderRadius;
+      background-image: url('./Assets/map.png');
+      box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+      overflow: hidden;
+      .Relocate {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        padding: 8px;
+        border-radius: 50%;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+        background-color: $toolbarColor;
+        height: 36px;
+        width: 36px;
+        cursor: pointer;
+        &:hover {
+          background-color: $backgroundColor;
+        }
+      }
+      .Zoom {
+        position: absolute;
+        right: 24px;
+        border-radius: $borderRadius;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+        background-color: $toolbarColor;
+        cursor: pointer;
+        .Zoom-icon {
+          display: block;
+          height: 20px;
+          width: 20px;
+          padding: 8px;
+          border-bottom: 1px solid rgba(0,0,0,.12);
+          &:last-child {
+            border-bottom: none;
+          }
+          &:hover {
+            background-color: $backgroundColor;
+          }
+        }
+      }
+      .Zone-wrapper {
+        position: absolute;
+        right: 20%;
+        bottom: 10%;
+        .Blue-zone {
+          height: 300px;
+          width: 300px;
+        }
+        span {
+          position: absolute;
+          bottom: 40%;
+          right: 40%;
+          font-size: 13px;
+        }
+        .Pin {
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+
+// custom scroller
+.Left::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #fafafa;
+}
+
+.Left::-webkit-scrollbar {
+	width: 8px;
+	background-color: #fafafa;
+}
+
+.Left::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #d8d8d8;
+}
+
+@media only screen and (min-width: 1256px) {
+  .Wrapper .Main-section .Right .Zoom {
+    top: 16px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1255px) {
+  .Wrapper .Main-section .Right .Zoom {
+    top: 16px;
+  }
+  .Wrapper .Main-section {
+    width: 100%;
+    margin-left: 8px;
+    .Left {
+      width: 360px;
+    }
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 992px) {
+  .Wrapper {
+    .Main-section {
+      margin: 0;
+      width: 100%;
+      height: calc(100% - 48px);
+      .Left {
+        display: none;
+      }
+      .Right {
+        margin: 0;
+        .Zoom {
+          bottom: 80px;
+        }
+      }
+    }
+  }
+}

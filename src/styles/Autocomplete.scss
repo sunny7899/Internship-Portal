@@ -1,0 +1,78 @@
+@import './variable';
+@import './Mixin.scss';
+
+
+.Autocomplete {
+    position: relative;
+    display: flex;
+    @include content-style($fontSize, $fontColor, $fontWeight);
+    .Input {
+        border-top-left-radius: $borderRadius;
+        border-bottom-left-radius: $borderRadius;
+        font-size: inherit;
+        padding: 8px;
+        border: 1px solid $borderColor;
+        border-right: none;
+        outline: none;
+        width: 360px;
+        &:focus {
+            border: 1px solid $colorSecondary;
+            border-right: none;
+            color: $colorSecondary;
+        }
+    }
+    .Input.Border { 
+        border-radius: $borderRadius;
+        width: 100%;
+        border-right: 1px solid rgba(0,0,0,.12);
+    }
+    .Button {
+        border-top-right-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
+        background-color: $colorSecondary;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        width: 40px;
+        .Seach-logo {
+            height: 18px;
+        }
+    }
+    .Options-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        background-color: $toolbarColor;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+        display: none;
+        .Options {
+            padding: 8px;
+            &:hover {
+                color: $colorSecondary;
+                background-color: rgba($colorSecondary, 0.2);
+                cursor: pointer;
+            } 
+        }
+    }
+    &:hover {
+        .Options-list {
+            display: block;
+        }
+    }
+}
+.Autocomplete.Dropdown {
+    margin-top: 16px;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 992px) {
+    .Autocomplete .Input {
+        width: 200px;
+    }
+    .Filters .Filter-btn {
+        max-width: 100px;
+    }
+}

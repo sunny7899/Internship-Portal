@@ -1,0 +1,27 @@
+@import './variable';
+@import './Mixin.scss';
+
+.Pin {
+    position: absolute;
+    display: flex;
+    .Pin-ctn {
+        position: relative;
+        cursor: pointer;
+        .Logo {
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            height: 28px;
+        }
+    }
+    .Pin-info {
+        padding: 4px;
+        min-width: 120px;
+        .ttl {
+            @include content-style(14px, $colorSecondary, 500);
+        }
+        .role {
+            @include content-style(13px, $colorSecondary, 400);
+        }
+    }
+}

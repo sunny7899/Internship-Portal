@@ -1,0 +1,36 @@
+@import './variable';
+
+@mixin content-style($size, $color, $weight) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+}
+
+@mixin btnSolid ($height, $width) {
+    height: $height;
+    width: $width;
+    @include content-style($fontSize, $toolbarColor, 500);
+    outline: none;
+    background-color: $colorSecondary;
+    border: none;
+    border-radius: $borderRadius;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0%);
+    &:hover {
+        box-shadow: 0 2px 6px rgb(0 0 0 / 60%);
+        cursor: pointer;
+    }
+}
+
+@mixin btnOutline ($height, $width) {
+    height: $height;
+    width: $width;
+    @include content-style($fontSize, $colorSecondary, 500);
+    outline: none;
+    background-color: $toolbarColor;
+    border: 1px solid $colorSecondary;
+    border-radius: $borderRadius;
+    &:hover {
+        box-shadow: 0 2px 6px rgb(0 0 0 / 60%);
+        cursor: pointer;
+    }
+}

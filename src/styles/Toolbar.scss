@@ -1,0 +1,58 @@
+@import './variable';
+
+.Toolbar {
+    background-color: $toolbarColor;
+    box-shadow: 2px 2px rgb(0 0 0 / 5%);
+    .Topbar {
+        height: 48px;
+        box-shadow: 2px 2px rgb(0 0 0 / 5%)
+    }
+    .Searchbar {
+        display: flex;
+        justify-content: space-between;
+        width: $initialWidth;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+}
+.Filters {
+    position: relative;
+    background-color: inherit;
+    font-size: inherit;
+    .Filter-btn {
+        background-color: $toolbarColor;
+        height: 100%;
+        width: 120px;
+        outline: none;
+        border: none;
+        border-radius: $borderRadius;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+        font-size: inherit;
+        .Filter-icon {
+            vertical-align: bottom;
+            margin-right: 8px;
+        }
+        &:hover {
+            box-shadow: 0 2px 5px rgb(0 0 0 / 30%);
+            background-color: $backgroundColor;
+            cursor: pointer;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1255px) {
+    .Toolbar .Searchbar {
+        width: calc(100% - 16px);
+        margin: 0 8px;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 991px) {
+    .Toolbar .Searchbar {
+        position: absolute;
+        width: calc(100% - 16px);
+        margin: 0 8px;
+        z-index: 1;
+    }
+}

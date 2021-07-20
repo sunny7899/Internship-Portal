@@ -1,0 +1,75 @@
+@import './variable';
+@import './Mixin.scss';
+
+.Card {
+    width: 400px;
+    background-color: $toolbarColor;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+    padding: 16px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+    &:last-child {
+        margin-bottom: 4px;
+    }
+}
+.Card.Active {
+    border: 1px solid $colorSecondary;
+}
+
+.Card, .Detail-content {
+    .Title {
+        @include content-style(18px, #000000, 600);
+    }
+    .Item, .Title {
+        margin-bottom: 4px;
+        span {
+            display: inline-block;
+            margin-right: 24px;
+        }
+        Img {
+            height: 20px;
+            vertical-align: bottom;
+            margin-right: 4px;
+        }
+    }
+    .Logo {
+        border-radius: 50%;
+        float: right;
+        padding: 8px;
+        background-color: $toolbarColor;
+        border: 1px solid $borderColor;
+        height: 28px;
+    }
+    .Card-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 16px;
+        color: $colorSecondary;
+        .Save-share {
+            Img {
+                cursor: not-allowed;
+            }
+        }
+        .View-Detail {
+            @include content-style(15px, $colorSecondary, 500);
+            padding: 4px;
+            padding-left: 8px;
+            border-radius: $borderRadius;
+            Img {
+                vertical-align: bottom;
+                height: 18px;
+            }
+            &:hover {
+                cursor: pointer;
+                box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1255px) {
+    .Card {
+        width: 350px;
+    }
+}
