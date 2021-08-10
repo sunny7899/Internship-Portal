@@ -15,10 +15,10 @@
     flex-direction: row;
     width: $initialWidth;
     margin: 16px auto;
-    height: calc(100% - 156px);
+    height: calc(100% - 184px);
     .Left {
       flex: none;
-      width: 410px;
+      width: 424px;
       margin-right: 8px;
       overflow-y: overlay;
       overflow-x: hidden;
@@ -27,7 +27,7 @@
       flex: auto;
       margin-left: 24px;
       position: relative;
-      border-radius: $borderRadius;
+      border-radius: 8px;
       background-image: url('./Assets/map.png');
       box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
       overflow: hidden;

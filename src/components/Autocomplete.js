@@ -1,6 +1,7 @@
 import '../styles/Autocomplete.scss';
 import React, { useState } from 'react';
 import { ReactComponent as SearchLogo} from '../Assets/Search.svg';
+import { ReactComponent as CrossLogo } from '../Assets/X.svg';
 
 const Autocomplete = ({...props}) => {
 
@@ -20,11 +21,19 @@ const Autocomplete = ({...props}) => {
     setSelection(e.target.innerText);
   }
 
+  const resetSelection = (e) => {
+    e.preventDefault();
+    setSelection('');
+  }
+
   return (
     <div className={`Autocomplete ${behave === 'dropdown' ? ' Dropdown' : ''}`} style={{ zIndex: `${index ? index : 1}` }}>
-      <input className={`Input ${behave === 'dropdown' ? ' Border' : ''}`}  type='search' placeholder={props.placeholder} value={selection} onChange={updateOptions} />
+      <input className={`Input ${behave === 'dropdown' ? ' Border' : ''}`}  type='text' placeholder={props.placeholder} value={selection} onChange={updateOptions} />
       {
-        behave === 'searchbar' ? <button className='Button'><SearchLogo  className='Seach-logo'/></button> : null
+        selection ? <CrossLogo className='Input-Cross' onClick={resetSelection}/> : null
+      }
+      {
+        behave === 'searchbar' ? <button className='Button'><SearchLogo className='Seach-logo'/></button> : null
       }
       <ul className='Options-list'>
         {

@@ -12,7 +12,8 @@
         justify-content: space-between;
         width: $initialWidth;
         margin: 0 auto;
-        padding: 20px 0;
+        height: 104px;
+        align-items: center;
     }
 }
 .Filters {
@@ -21,8 +22,8 @@
     font-size: inherit;
     .Filter-btn {
         background-color: $toolbarColor;
-        height: 100%;
-        width: 120px;
+        height: 56px;
+        width: 127px;
         outline: none;
         border: none;
         border-radius: $borderRadius;

@@ -132,7 +132,6 @@ const App = () => {
   const [detailIndex, setDetailIndex] = useState(null);
   const [filtersView, setFilterView] = useState(false);
 
-
   // Highlight or Open seletcted card
   const highlightCard = (id) => {
     if (window.screen.width < 992) {
