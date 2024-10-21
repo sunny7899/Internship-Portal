@@ -9,6 +9,7 @@ import PostedOnIcon from '../Assets/posted on.svg';
 import CloseBlackIcon from '../Assets/X black.svg';
 import ShareIcon from '../Assets/Share.svg';
 import SaveIcon from '../Assets/Save.svg';
+import React from 'react';
 
 
 const Details = ({...props}) => {
