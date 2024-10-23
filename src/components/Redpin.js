@@ -1,4 +1,5 @@
 import '../styles/Redpin.scss';
+import React from 'react';
 import { ReactComponent as RedPin } from '../Assets/Red pin.svg';
 import DisabledStar from '../Assets/Disabled star.svg';
 import ActiveStar from '../Assets/active star.svg';

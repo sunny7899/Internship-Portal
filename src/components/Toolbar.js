@@ -1,5 +1,6 @@
+import React from 'react';
 import '../styles/Toolbar.scss';
-import Autocomplete from '../components/Autocomplete';
+import Autocomplete from './Autocomplete';
 import { ReactComponent as FilterLogo } from '../Assets/filter.svg';
 
 const metroList = [

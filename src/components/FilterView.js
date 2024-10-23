@@ -3,6 +3,7 @@ import CloseIcon from '../Assets/X.svg';
 import Autocomplete from './Autocomplete';
 import { useState } from 'react';
 import _ from 'lodash';
+import React from 'react';
 
 const locArray = [
   { id: 1, value: '5km', isActive: false },
